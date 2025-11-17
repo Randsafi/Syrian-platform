@@ -4,12 +4,13 @@ import '../App.css';
 import { useState } from 'react';
 
 // MUI IMPORTS
-import { Box, Button, Container, IconButton, Stack, TextField, Typography ,InputAdornment } from '@mui/material';
+import { Box, Button, Container, IconButton, Stack, TextField, Typography ,InputAdornment, ThemeProvider } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import LoginNavbar from './Navbar/LoginNavbar';
 import { Link } from 'react-router-dom';
+import { appTheme } from '../appTeme';
 
 function LogIn() {
   const [formData,setFormData]=useState({
@@ -67,9 +68,9 @@ function LogIn() {
   }
 
   return (
-    <>
+    <ThemeProvider Provider theme={appTheme}>
     <LoginNavbar/>
-    <Container maxWidth="sm" sx={{marginBottom:'300px', gap: 2, my: 3  }}>
+    <Container maxWidth="sm" sx={{minHeight:'100hv',marginBottom:'300px', gap: 2, my: 3  }}>
       <Box sx={{ display:'flex',flexDirection:'column' , gap: 2, my: 3 }}>
        <Typography variant="h4" >تسجيل الدخول</Typography>
        <Box style={{ display:'flex',alignItems: 'center',justifyContent:'center',flexDirection:'row' , gap: 2, my: 3 }}>
@@ -79,8 +80,8 @@ function LogIn() {
         </Link>
        </Box>
        <Stack sx={{ display: 'flex' ,alignItems: 'center',justifyContent:'center',flexDirection:'row' }}>
-         <Button variant='outlined'sx={{borderRadius:'30px' ,marginLeft:'10px'}} color="inherit"><GoogleIcon/>تسجيل عبر جوجل</Button>
-         <Button variant='outlined'sx={{borderRadius:'30px'}} color="inherit"><AppleIcon/>تسجيل عبر آبل</Button>
+         <Button variant='outlined'sx={{borderRadius:'30px' ,marginLeft:'10px'}} color="inherit" onClick={() => window.open('https://accounts.google.com/signup', '_blank')}> <GoogleIcon color='red'/> تسجيل عبر جوجل</Button>
+         <Button variant='outlined'sx={{borderRadius:'30px'}} color="inherit" onClick={() => window.open('https://appleid.apple.com/sign-up', '_blank')}> <AppleIcon/> تسجيل عبر آبل</Button>
        </Stack>
        <Typography variant="body1" sx={{ mr: 3 }}> أو</Typography>
        <Stack
@@ -93,7 +94,7 @@ function LogIn() {
            gap: 2, my: 3,
            direction:'rtl' 
            }}>
-         <Typography variant="body1" sx={{ mr: 3 ,marginLeft:'410px' }}>البريد الالكتروني</Typography>
+         <Typography variant="h6" sx={{ mr: 3 ,marginLeft:'410px' }}>البريد الالكتروني</Typography>
          <TextField
            required
            id="outlined-input"
@@ -103,7 +104,7 @@ function LogIn() {
 
          //   sx={{borderRadius:'15px'}}
          />
-         <Typography variant="body1" sx={{ mr: 3 ,marginLeft:'450px' }}> كلمة السر</Typography>
+         <Typography variant="h6" sx={{ mr: 3 ,marginLeft:'450px' }}> كلمة السر</Typography>
          <Typography variant="subtitle2" sx={{marginLeft:'250px' ,color:'gray' }}> 6 أحرف من فضلك يجب ان تحتوي على رموز ايضا. </Typography>
          <TextField
            id="outlined-password-input"
@@ -137,7 +138,7 @@ function LogIn() {
        </Stack>
       </Box> 
     </Container>
-    </>
+    </ThemeProvider>
   )
 }
 

@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import '../App.css'
 import LoginNavbar from "./Navbar/LoginNavbar";
 
-import { Box, Button, Container, Stack, TextField, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, TextField, Grid, Typography, ThemeProvider } from "@mui/material";
 import { useState } from "react";
+import { appTheme } from '../appTeme';
 
 function Password() {
     const [email,setEmail]=useState('')
@@ -27,7 +28,7 @@ function Password() {
     }
 
     return(
-        <div>
+        <ThemeProvider Provider theme={appTheme}>
             <LoginNavbar/>
             <Container maxWidth="sm" sx={{marginBottom:'400px', gap: 2, my: 3  }}>
                 <Box sx={{ display:'flex',flexDirection:'column' , gap: 2, my: 3 }}>
@@ -45,7 +46,7 @@ function Password() {
                     alignItems:'stretch',
                     gap: 2, my: 3,
                     direction:'rtl' }}>
-                  <Typography variant="body1" sx={{ mr: 3 ,marginLeft:'420px'  }}>البريد الالكتروني</Typography>
+                  <Typography variant="h6" sx={{ mr: 3 ,marginLeft:'420px'  }}>البريد الالكتروني</Typography>
                   <TextField
                     required
                     id="outlined-input"
@@ -69,7 +70,7 @@ function Password() {
                 </Stack>
                </Box> 
             </Container>
-        </div>
+        </ThemeProvider>
     )
 }
 
