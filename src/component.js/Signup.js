@@ -71,7 +71,9 @@ function Signup() {
         <Typography variant="h4" > انشاء حساب جديد</Typography>
         <Box style={{ display:'flex',alignItems: 'center',justifyContent:'center',flexDirection:'row' , gap: 2, my: 3 }}>
          <Typography variant="h6" color='#1e2830ff' >هل لديك حساب على المنصة السورية؟</Typography> 
-         <Typography variant="h6" color='#0c72d8ff' > سجل دخولك </Typography> 
+         <Link to={"/login"}>
+          <Typography variant="h6" color='#0c72d8ff' > سجل دخولك </Typography> 
+         </Link>
         </Box>
         <Stack sx={{ display: 'flex' ,alignItems: 'center',justifyContent:'center',flexDirection:'row' }}>
           <Button variant='outlined'sx={{borderRadius:'30px' ,marginLeft:'10px'}} color="inherit"><GoogleIcon/> انشاء حساب جوجل</Button>
@@ -169,9 +171,9 @@ function Signup() {
             </Typography>
           )} */}
         </Box>
-        <Link to={"/login"}>
+        
           <Button variant='contained' sx={{borderRadius:'30px' ,height:'50px'}} onClick={handleSignup}>انشاء حساب</Button>
-        </Link>
+       
         </Stack>
         </Box> 
       </Container>

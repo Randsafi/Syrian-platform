@@ -74,7 +74,9 @@ function LogIn() {
        <Typography variant="h4" >تسجيل الدخول</Typography>
        <Box style={{ display:'flex',alignItems: 'center',justifyContent:'center',flexDirection:'row' , gap: 2, my: 3 }}>
         <Typography variant="h6" color='#1e2830ff' > لديك حساب على المنصة السورية؟</Typography> 
-        <Typography variant="h6" color='info' > انشاء حساب </Typography> 
+        <Link to={"/register"}>
+          <Typography variant="h6" color='info' > انشاء حساب </Typography> 
+        </Link>
        </Box>
        <Stack sx={{ display: 'flex' ,alignItems: 'center',justifyContent:'center',flexDirection:'row' }}>
          <Button variant='outlined'sx={{borderRadius:'30px' ,marginLeft:'10px'}} color="inherit"><GoogleIcon/>تسجيل عبر جوجل</Button>
@@ -130,10 +132,8 @@ function LogIn() {
          />
          <Link to={"/forgot-password"}>
           <Typography variant="h6" sx={{ mr: 3 }}> هل نسيت كلمة السر ؟</Typography>
-         </Link>
-         <Link to={"/register"}>
+         </Link> 
           <Button variant='contained' sx={{borderRadius:'30px' ,height:'50px'}} onClick={handleLogin}> تسجيل الدخول</Button>
-         </Link>
        </Stack>
       </Box> 
     </Container>

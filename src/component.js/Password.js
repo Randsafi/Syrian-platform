@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../App.css'
 import LoginNavbar from "./Navbar/LoginNavbar";
 
@@ -54,10 +55,14 @@ function Password() {
                   />
                  <Grid container spacing={2}>
                     <Grid  size={{ xs: 6, md: 9 }}>
-                      <Button size="large" variant='contained' sx={{borderRadius:'30px' ,height:'50px', width:'100%'}} onClick={handleNext} >التالي</Button>
+                      <Link to={"/new-password"}>
+                        <Button size="large" variant='contained' sx={{borderRadius:'30px' ,height:'50px', width:'100%'}} onClick={handleNext} >التالي</Button>
+                      </Link>
                     </Grid>
                     <Grid size={{ xs: 6, md: 3 }}>
-                      <Button size="large" variant='outlined' sx={{borderRadius:'30px' ,height:'50px', width:'100%'}} >الغاء</Button>
+                      <Link to={"/login"}>
+                        <Button size="large" variant='outlined' sx={{borderRadius:'30px' ,height:'50px', width:'100%'}} >الغاء</Button>
+                      </Link>
                     </Grid>
                  </Grid>
                   
