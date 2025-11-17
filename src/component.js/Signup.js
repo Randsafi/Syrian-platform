@@ -2,9 +2,10 @@ import '../App.css';
 
 // HOOKS IMPORTS
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // MUI IMPORTS
-import { Box, Button, Checkbox,Container, IconButton, Stack, TextField, Typography ,InputAdornment, InputLabel, FormControlLabel, Link } from '@mui/material';
+import { Box, Button, Checkbox,Container, IconButton, Stack, TextField, Typography ,InputAdornment, InputLabel, FormControlLabel } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -168,7 +169,9 @@ function Signup() {
             </Typography>
           )} */}
         </Box>
+        <Link to={"/login"}>
           <Button variant='contained' sx={{borderRadius:'30px' ,height:'50px'}} onClick={handleSignup}>انشاء حساب</Button>
+        </Link>
         </Stack>
         </Box> 
       </Container>

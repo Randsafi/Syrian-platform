@@ -1,7 +1,7 @@
 import './App.css';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { Button, createTheme, ThemeProvider } from '@mui/material';
 
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route, Link } from 'react-router-dom';
 
 import LogIn from './component.js/LogIn';
 import Signup from './component.js/Signup';
@@ -66,7 +66,8 @@ function App() {
   return (
     <div className="App" dir="rtl" style={{margin:"20px" ,direction:"rtl"}}>
       <ThemeProvider Provider theme={appTheme }>
-        <LogIn/>
+        <Link to={"/login"}> <Button> login</Button> </Link>
+        <Link to={"/register"}> <Button> Sign up</Button> </Link>
         
       </ThemeProvider>
       <Routes >

@@ -9,6 +9,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import LoginNavbar from './Navbar/LoginNavbar';
+import { Link } from 'react-router-dom';
 
 function LogIn() {
   const [formData,setFormData]=useState({
@@ -127,8 +128,12 @@ function LogIn() {
              )
            }}
          />
-         <Typography variant="h6" sx={{ mr: 3 }}> هل نسيت كلمة السر ؟</Typography>
-         <Button variant='contained' sx={{borderRadius:'30px' ,height:'50px'}} onClick={handleLogin}> تسجيل الدخول</Button>
+         <Link to={"/forgot-password"}>
+          <Typography variant="h6" sx={{ mr: 3 }}> هل نسيت كلمة السر ؟</Typography>
+         </Link>
+         <Link to={"/register"}>
+          <Button variant='contained' sx={{borderRadius:'30px' ,height:'50px'}} onClick={handleLogin}> تسجيل الدخول</Button>
+         </Link>
        </Stack>
       </Box> 
     </Container>
