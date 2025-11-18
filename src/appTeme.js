@@ -4,7 +4,7 @@ export const appTheme = createTheme({
   direction: 'rtl',
   palette: {
     primary: {
-      main: '#1976d2', 
+      main: '#6DCDE5', 
     },
     secondary: {
       main: '#fd79a8', // وردي

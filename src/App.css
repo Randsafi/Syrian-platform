@@ -1,5 +1,5 @@
 body{
-background: linear-gradient(180deg, #d4fafd 0%, #f9fdfd 50%,#f9fdfd 75%, #d4fafd 100%)
+background: linear-gradient(180deg, #d4fafd 0%, #f9fdfd 50%,#f9fdfd 75%, #fbffff 100%)
 }
 .App {
   text-align: center;
@@ -9,6 +9,10 @@ background: linear-gradient(180deg, #d4fafd 0%, #f9fdfd 50%,#f9fdfd 75%, #d4fafd
   height: 40vmin;
   pointer-events: none;
 }
+
+/* Button{
+  background: #6DCDE5;
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
